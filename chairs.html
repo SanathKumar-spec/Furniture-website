@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account - Furnite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navbar -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a class="text-2xl font-semibold text-gray-900" href="index.html">Furnite</a>
+      <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+        <a class="hover:text-gray-900 transition" href="index.html">Home</a>
+        <a class="hover:text-gray-900 transition" href="#">Shop</a>
+        <a class="hover:text-gray-900 transition" href="#">About</a>
+        <a class="hover:text-gray-900 transition" href="#">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <button aria-label="Search" class="text-gray-600 hover:text-gray-900 transition">
+          <i class="fas fa-search fa-lg"></i>
+        </button>
+        <a href="profile.html" aria-label="User Account" class="text-gray-600 hover:text-gray-900 transition">
+          <i class="fas fa-user fa-lg"></i>
+        </a>
+        <button aria-label="Shopping Cart" class="text-gray-600 hover:text-gray-900 transition relative">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5">3</span>
+        </button>
+      </div>
+      <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none" id="mobile-menu-button">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <nav class="md:hidden hidden border-t border-gray-200" id="mobile-menu">
+      <div class="px-6 py-4 space-y-3 font-medium text-gray-700">
+        <a class="block hover:text-gray-900 transition" href="#">Home</a>
+        <a class="block hover:text-gray-900 transition" href="#">Shop</a>
+        <a class="block hover:text-gray-900 transition" href="#">About</a>
+        <a class="block hover:text-gray-900 transition" href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+  
+  <!--Body-->
+<main>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-10 max-w-7xl mx-auto">
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/b8/81/55/b88155b7b08d4f8183d4aab99962f65b.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Lance-x</h2>
+        <h4 class="text-sm line-clamp-3">Wooden Arm Chair | Modern High Back PU Leather Cushion Chair for Kitchen, Living Room, Office, Cafe | Walnut Finish (Brown)</h4>
+        <h2 class="font-semibold mt-1">$93.99</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/43/d0/ee/43d0eeaf3aba169a6c0c1aba72a162a8.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">WOODSTAGE</h2>
+        <h4 class="text-sm line-clamp-3">WOODSTAGE Solid Sheesham Wood Multipurpose Chair for Living Room Bedroom Home Wooden Armchair Furniture for Garden Balcony Outdoor Indoor - (Honey Oak Finish)</h4>
+        <h2 class="font-semibold mt-1">$116.49</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/57/8c/49/578c49aa133f8285b88941381fd255d3.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">ODEJIA</h2>
+        <h4 class="text-sm line-clamp-3">Wooden Arm Chair with Cushion and Cane Back Support Chair Living Room Bedroom Home Wooden Armchair Furniture Garden Balcony Outdoor & Indoor (Walnut Finish)</h4>
+        <h2 class="font-semibold mt-1">$133.29</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/2c/01/c2/2c01c27d2de1038af2b83f3c387cb5fc.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Zivanto</h2>
+        <h4 class="text-sm">Zivanto Wooden Single Seater Sofa Chair for Living Room, 1 Seater Armchair for Drawing Room, Solid Wood Sheesham, Honey Brown</h4>
+        <h2 class="font-semibold mt-1">$116.99</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+</div>
+
+</main>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Furnite</h3>
+        <p class="text-sm">Your one-stop shop for modern and classic furniture to beautify your home.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Shop</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-gray-900 transition" href="#">Chairs</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Tables</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Sofas</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Storage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-gray-900 transition" href="#">About Us</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Careers</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Contact</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Follow Us</h4>
+        <div class="flex space-x-6 text-gray-600">
+          <a aria-label="Facebook" class="hover:text-gray-900 transition" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a aria-label="Twitter" class="hover:text-gray-900 transition" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+          <a aria-label="Instagram" class="hover:text-gray-900 transition" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a aria-label="LinkedIn" class="hover:text-gray-900 transition" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-sm text-gray-500">© 2024 Furnite. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

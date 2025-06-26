@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account - Furnite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .line-clamp-3 {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Navbar -->
+  <header class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <a class="text-2xl font-semibold text-gray-900" href="index.html">Furnite</a>
+      <nav class="hidden md:flex space-x-8 font-medium text-gray-700">
+        <a class="hover:text-gray-900 transition" href="index.html">Home</a>
+        <a class="hover:text-gray-900 transition" href="#">Shop</a>
+        <a class="hover:text-gray-900 transition" href="#">About</a>
+        <a class="hover:text-gray-900 transition" href="#">Contact</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <button aria-label="Search" class="text-gray-600 hover:text-gray-900 transition">
+          <i class="fas fa-search fa-lg"></i>
+        </button>
+        <a href="profile.html" aria-label="User Account" class="text-gray-600 hover:text-gray-900 transition">
+          <i class="fas fa-user fa-lg"></i>
+        </a>
+        <button aria-label="Shopping Cart" class="text-gray-600 hover:text-gray-900 transition relative">
+          <i class="fas fa-shopping-cart fa-lg"></i>
+          <span class="absolute -top-1 -right-2 bg-red-600 text-white text-xs rounded-full px-1.5">3</span>
+        </button>
+      </div>
+      <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none" id="mobile-menu-button">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <nav class="md:hidden hidden border-t border-gray-200" id="mobile-menu">
+      <div class="px-6 py-4 space-y-3 font-medium text-gray-700">
+        <a class="block hover:text-gray-900 transition" href="#">Home</a>
+        <a class="block hover:text-gray-900 transition" href="#">Shop</a>
+        <a class="block hover:text-gray-900 transition" href="#">About</a>
+        <a class="block hover:text-gray-900 transition" href="#">Contact</a>
+      </div>
+    </nav>
+  </header>
+  
+<main>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-10 max-w-7xl mx-auto">
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/6c/8c/fe/6c8cfe71cb6f4fbd24245c55dca4c807.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Rostres</h2>
+        <h4 class="text-sm line-clamp-3">Wooden Street Kayden 4 Door Wardrobe Furniture for Clothes, Wooden Almirah for Bedroom, Multi Utility Cupboard with Lock and Handles,1 Year Warranty, Engineered Wood, Columbian Walnut Finish</h4>
+        <h2 class="font-semibold mt-1">$99.99</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/43/71/5e/43715ec64c7c5f6c0eb53bd7e4014a62.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Matrix</h2>
+        <h4 class="text-sm line-clamp-3">An eclectic array of innovative bookshelf designs—ranging from geometric wall shelves to repurposed ladder bookcases—showcasing creative ways to transform and personalize your living space.</h4>
+        <h2 class="font-semibold mt-1">$140.99</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/9f/7e/6e/9f7e6e7f47739098c7f82b26586debae.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Lumens</h2>
+        <h4 class="text-sm line-clamp-3">Wooden Street Kayden 4 Door Engineered Wood Wardrobe Furniture for Clothes, Wooden Almirah for Bedroom, Multi Utility Cupboard with Hanging Rod, Lock and Handles,1 Year Warranty (Frosty White)</h4>
+        <h2 class="font-semibold mt-1">$120.99</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+
+  <a class="group block rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition h-[550px] flex flex-col">
+    <img src="https://i.pinimg.com/736x/93/7e/90/937e903e18216e2ba9c40d048109a3b2.jpg" class="w-full h-[340px] object-cover group-hover:scale-105 transition-transform duration-300" alt="">
+    
+    <div class="p-4 bg-white flex flex-col justify-between flex-grow">
+      <div>
+        <h2 class="font-semibold mt-2">Furnite</h2>
+        <h4 class="text-sm line-clamp-3">Nilkamal Freedom Big FMM Plastic Cabinet | 3-Year Warranty | 4-Shelf Storage Cupboard with Doors | Multi Organiser for Home, Wardrobe, and Kitchen | Clothes Rack, Shelves, Brown & Biscuit Colour </h4>
+        <h2 class="font-semibold mt-1">$399.59</h2>
+      </div>
+      <button class="px-4 py-1 rounded-xl bg-yellow-500 mb-2">Cart</button>
+    </div>
+  </a>
+</div>
+
+</main>
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 mt-20 py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700">
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Furnite</h3>
+        <p class="text-sm">Your one-stop shop for modern and classic furniture to beautify your home.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Shop</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-gray-900 transition" href="#">Chairs</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Tables</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Sofas</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Storage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Company</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-gray-900 transition" href="#">About Us</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Careers</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Contact</a></li>
+          <li><a class="hover:text-gray-900 transition" href="#">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-gray-900 mb-4">Follow Us</h4>
+        <div class="flex space-x-6 text-gray-600">
+          <a aria-label="Facebook" class="hover:text-gray-900 transition" href="#"><i class="fab fa-facebook fa-lg"></i></a>
+          <a aria-label="Twitter" class="hover:text-gray-900 transition" href="#"><i class="fab fa-twitter fa-lg"></i></a>
+          <a aria-label="Instagram" class="hover:text-gray-900 transition" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a aria-label="LinkedIn" class="hover:text-gray-900 transition" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 text-center text-sm text-gray-500">© 2024 Furnite. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
