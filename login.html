@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --primary: #3a3a3a;
+            --secondary: #f5f5f5;
+            --accent: #d4a762;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: var(--primary);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c1914e;
+            transform: translateY(-2px);
+        }
+        
+        .auth-container {
+            min-height: calc(100vh - 80px);
+        }
+        
+        .auth-card {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .auth-card:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent);
+        }
+        
+        .auth-image {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                        url('https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .floating-label-group {
+            position: relative;
+        }
+        
+        .floating-label {
+            position: absolute;
+            pointer-events: none;
+            left: 15px;
+            top: 11px;
+            transition: all 0.2s ease;
+            color: #999;
+        }
+        
+        .form-input:focus ~ .floating-label,
+        .form-input:not(:placeholder-shown) ~ .floating-label {
+            top: -10px;
+            left: 10px;
+            font-size: 12px;
+            background-color: white;
+            padding: 0 5px;
+            color: var(--accent);
+        }
+        
+        .social-btn {
+            border: 1px solid #e0e0e0;
+            transition: all 0.2s ease;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .facebook-btn:hover {
+            background-color: #1877f2;
+            color: white;
+            border-color: #1877f2;
+        }
+        
+        .google-btn:hover {
+            background-color: #db4437;
+            color: white;
+            border-color: #db4437;
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #999;
+            margin: 20px 0;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .divider::before {
+            margin-right: 10px;
+        }
+        
+        .divider::after {
+            margin-left: 10px;
+        }
+        
+        .toggle-form {
+            color: var(--accent);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        
+        .toggle-form:hover {
+            color: #c1914e;
+        }
+        
+        .error-message {
+            color: #e53e3e;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        /* Password visibility toggle */
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .password-toggle:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800">LUXE</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link text-gray-600 hover:text-gray-900 transition">Home</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-gray-900 transition">Products</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-gray-900 transition">About</a>
+                <a href="#" class="nav-link text-gray-600 hover:text-gray-900 transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="relative">
+                    <i class="fas fa-shopping-cart text-gray-700 text-xl hover:text-gray-900 transition"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </button>
+                <a href="#" class="btn-primary px-4 py-2 rounded-md text-white font-medium hidden md:block">Login</a>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700 text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Container -->
+    <div class="auth-container flex items-center justify-center pt-20 pb-10 px-4">
+        <div class="flex w-full max-w-4xl bg-white rounded-xl overflow-hidden auth-card">
+            <!-- Login Form -->
+            <div class="w-full md:w-1/2 p-10" id="login-form">
+                <h2 class="text-3xl font-bold mb-2 text-center">Welcome Back</h2>
+                <p class="text-gray-500 text-center mb-8">Sign in to your account to continue</p>
+                
+                <!-- Social Login Buttons -->
+                <div class="flex flex-col space-y-4 mb-6">
+                    <button class="social-btn facebook-btn flex items-center justify-center py-3 rounded-md px-4">
+                        <i class="fab fa-facebook-f mr-3"></i>
+                        Continue with Facebook
+                    </button>
+                    <button class="social-btn google-btn flex items-center justify-center py-3 rounded-md px-4">
+                        <i class="fab fa-google mr-3"></i>
+                        Continue with Google
+                    </button>
+                </div>
+                
+                <div class="divider">OR</div>
+                
+                <!-- Email Login Form -->
+                <form>
+                    <div class="mb-5">
+                        <div class="floating-label-group">
+                            <input type="email" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="login-email" placeholder=" ">
+                            <label class="floating-label">Email Address</label>
+                        </div>
+                        <div class="error-message" id="email-error">Please enter a valid email</div>
+                    </div>
+                    
+                    <div class="mb-1">
+                        <div class="floating-label-group relative">
+                            <input type="password" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="login-password" placeholder=" ">
+                            <label class="floating-label">Password</label>
+                            <span class="password-toggle" id="login-password-toggle">
+                                <i class="far fa-eye"></i>
+                            </span>
+                        </div>
+                        <div class="error-message" id="password-error">Password must be at least 6 characters</div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center">
+                            <input type="checkbox" id="remember-me" class="mr-2">
+                            <label for="remember-me" class="text-sm text-gray-600">Remember me</label>
+                        </div>
+                        <a href="#" class="text-sm text-gray-600 hover:text-d4a762">Forgot password?</a>
+                    </div>
+                    
+                    <button type="button" class="btn-primary w-full py-3 rounded-md text-white font-medium mb-4" id="login-btn">
+                        Sign In
+                    </button>
+                    
+                    <p class="text-center text-gray-600">
+                        Don't have an account? 
+                        <span class="toggle-form" data-target="signup-form">Sign up</span>
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Signup Form (Hidden by Default) -->
+            <div class="w-full md:w-1/2 p-10 hidden" id="signup-form">
+                <h2 class="text-3xl font-bold mb-2 text-center">Create Account</h2>
+                <p class="text-gray-500 text-center mb-8">Join our community of design enthusiasts</p>
+                
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+                        <div class="floating-label-group">
+                            <input type="text" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="signup-firstname" placeholder=" ">
+                            <label class="floating-label">First Name</label>
+                        </div>
+                        <div class="floating-label-group">
+                            <input type="text" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="signup-lastname" placeholder=" ">
+                            <label class="floating-label">Last Name</label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <div class="floating-label-group">
+                            <input type="email" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="signup-email" placeholder=" ">
+                            <label class="floating-label">Email Address</label>
+                        </div>
+                        <div class="error-message" id="signup-email-error">Please enter a valid email</div>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <div class="floating-label-group relative">
+                            <input type="password" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="signup-password" placeholder=" ">
+                            <label class="floating-label">Password</label>
+                            <span class="password-toggle" id="signup-password-toggle">
+                                <i class="far fa-eye"></i>
+                            </span>
+                        </div>
+                        <div class="error-message" id="signup-password-error">Password must be at least 8 characters</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="floating-label-group relative">
+                            <input type="password" class="form-input w-full py-3 px-4 border border-gray-300 rounded-md focus:outline-none" 
+                                   id="signup-confirm-password" placeholder=" ">
+                            <label class="floating-label">Confirm Password</label>
+                            <span class="password-toggle" id="confirm-password-toggle">
+                                <i class="far fa-eye"></i>
+                            </span>
+                        </div>
+                        <div class="error-message" id="confirm-password-error">Passwords do not match</div>
+                    </div>
+                    
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="signup-terms" class="mr-2">
+                        <label for="signup-terms" class="text-sm text-gray-600">
+                            I agree to the <a href="#" class="text-d4a762">Terms of Service</a> and <a href="#" class="text-d4a762">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <button type="button" class="btn-primary w-full py-3 rounded-md text-white font-medium mb-4" id="signup-btn">
+                        Create Account
+                    </button>
+                    
+                    <p class="text-center text-gray-600">
+                        Already have an account? 
+                        <span class="toggle-form" data-target="login-form">Sign in</span>
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Auth Image -->
+            <div class="hidden md:block w-1/2 auth-image flex items-center justify-center text-white p-10">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-4">LUXE Furniture</h2>
+                    <p class="text-xl mb-6">Transform your space with our premium collection</p>
+                    <div class="flex space-x-3 justify-center">
+                        <div class="w-3 h-3 rounded-full bg-white opacity-50"></div>
+                        <div class="w-3 h-3 rounded-full bg-white"></div>
+                        <div class="w-3 h-3 rounded-full bg-white opacity-50"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between login and signup forms
+        document.querySelectorAll('.toggle-form').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetForm = this.getAttribute('data-target');
+                document.getElementById('login-form').classList.toggle('hidden');
+                document.getElementById('signup-form').classList.toggle('hidden');
+            });
+        });
+        
+        // Password visibility toggles
+        function setupPasswordToggle(inputId, toggleId) {
+            const passwordInput = document.getElementById(inputId);
+            const toggle = document.getElementById(toggleId);
+            
+            if (passwordInput && toggle) {
+                toggle.addEventListener('click', function() {
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        toggle.innerHTML = '<i class="far fa-eye-slash"></i>';
+                    } else {
+                        passwordInput.type = 'password';
+                        toggle.innerHTML = '<i class="far fa-eye"></i>';
+                    }
+                });
+            }
+        }
+        
+        // Setup for all password fields
+        setupPasswordToggle('login-password', 'login-password-toggle');
+        setupPasswordToggle('signup-password', 'signup-password-toggle');
+        setupPasswordToggle('signup-confirm-password', 'confirm-password-toggle');
+        
+        // Form validation for login
+        document.getElementById('login-btn')?.addEventListener('click', function() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+            let isValid = true;
+            
+            // Email validation
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('email-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('email-error').style.display = 'none';
+            }
+            
+            // Password validation
+            if (!password || password.length < 6) {
+                document.getElementById('password-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('password-error').style.display = 'none';
+            }
+            
+            if (isValid) {
+                // Submit form or make API call
+                alert('Login successful!');
+                // window.location.href = 'profile.html';
+            }
+        });
+        
+        // Form validation for signup
+        document.getElementById('signup-btn')?.addEventListener('click', function() {
+            const firstName = document.getElementById('signup-firstname').value;
+            const lastName = document.getElementById('signup-lastname').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const confirmPassword = document.getElementById('signup-confirm-password').value;
+            const termsChecked = document.getElementById('signup-terms').checked;
+            let isValid = true;
+            
+            // Name validation
+            if (!firstName) {
+                isValid = false;
+            }
+            if (!lastName) {
+                isValid = false;
+            }
+            
+            // Email validation
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('signup-email-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('signup-email-error').style.display = 'none';
+            }
+            
+            // Password validation
+            if (!password || password.length < 8) {
+                document.getElementById('signup-password-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('signup-password-error').style.display = 'none';
+            }
+            
+            // Confirm password validation
+            if (password !== confirmPassword) {
+                document.getElementById('confirm-password-error').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('confirm-password-error').style.display = 'none';
+            }
+            
+            // Terms validation
+            if (!termsChecked) {
+                isValid = false;
+                alert('Please accept the terms and conditions');
+            }
+            
+            if (isValid) {
+                // Submit form or make API call
+                alert('Account created successfully!');
+                // window.location.href = 'profile.html';
+            }
+        });
+        
+        // Smooth scroll and other enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add floating label behavior to all form inputs
+            const floatLabels = document.querySelectorAll('.floating-label-group input');
+            floatLabels.forEach(input => {
+                // Check if input has value on load (for browser autofill)
+                if (input.value) {
+                    input.nextElementSibling.classList.add('floating-label-active');
+                }
+                
+                input.addEventListener('focus', function() {
+                    this.nextElementSibling.classList.add('floating-label-active');
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.nextElementSibling.classList.remove('floating-label-active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
